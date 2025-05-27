@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <title>Harborlights - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Load Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700&display=swap" rel="stylesheet">
+
+    <!-- Load static CSS files -->
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<style>
+    .img-block {
+        width: 100%;
+        height: 250px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .desc {
+        font-family: 'Poppins', sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+        color: #2c3e50;
+        margin-top: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .famous-card {
+        margin-bottom: 40px;
+    }
+</style>
+
+<!-- Google Fonts uchun -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">inclub<span>.uz</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="hotel" class="nav-link">Hotels</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END nav -->
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <section class="home-slider owl-carousel">
+            <div class="slider-item" style="background-image:url({% static 'images/bg_1.jpg' %});">
+                <div class="overlay"></div>
+                <div class="container">
+                    <div class="row justify-content-center no-gutters slider-text align-items-center justify-content-end">
+                        <div class="col-md-10 ftco-animate">
+                            <div class="text text-center">
+                                <h1 class="mb-3">Welcome to inclub.uz</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Blog Section -->
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center mb-5 pb-3">
+                <div class="col-md-7 heading-section text-center ftco-animate">
+                    <h2>The most famous hotels</h2>
+                </div>
+            </div>
+            <div class="row d-flex">
+<div class="container">
+    {% for famouss in famouss %}
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-4 text-center">
+            <div class="famous-card">
+                <div class="img-block" style="background-image: url('{{ famouss.image1.url }}');"></div>
+                <p class="desc">{{ famouss.descreption1 }}</p>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="famous-card">
+                <div class="img-block" style="background-image: url('{{ famouss.image2.url }}');"></div>
+                <p class="desc">{{ famouss.descreption2 }}</p>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="famous-card">
+                <div class="img-block" style="background-image: url('{{ famouss.image3.url }}');"></div>
+                <p class="desc">{{ famouss.descreption3 }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Loader -->
+    <div id="ftco-loader" class="show fullscreen">
+        <svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00" />
+        </svg>
+    </div>
+
+    <!-- Load JavaScript files correctly -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/aos.js' %}"></script>
+    <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+    <script src="{% static 'js/scrollax.min.js' %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY"></script>
+    <script src="{% static 'js/google-map.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

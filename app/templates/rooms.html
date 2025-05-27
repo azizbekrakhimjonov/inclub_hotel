@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      {% load static %}
+    <title>Inclub</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <style>
+        /* Custom search bar style */
+        .custom-search {
+            margin-top: 10px; /* Tepaga 10px bo‘shliq beradi */
+            text-align: center; /* Markazlashtiradi */
+            display: flex;
+            justify-content: center; /* Markazga joylashtiradi */
+            align-items: center;
+        }
+    </style>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">inclub<span>.uz</span></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+          </button>
+
+          <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+              <li class="nav-item active"><a href="/" class="nav-link">Hotels</a></li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-wrap" style="background-image: url('{% static 'images/bg_3.jpg' %}');">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text d-flex align-itemd-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center d-flex align-items-end justify-content-center">
+          	<div class="text">
+	            <p class="breadcrumbs mb-2"><span class="mr-2"><a href="">Home</a></span></p>
+	            <h1 class="mb-4 bread">Hotels</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search Form -->
+    <div class="row no-gutters justify-content-center mb-5 pb-3">
+        <div class="col-lg-6 custom-search">
+            <form method="GET" action="{% url 'hotel_search' %}">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="district" placeholder="Search by District" value="{{ request.GET.district }}">
+                </div>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hotel Listings -->
+    <section class="ftco-section ftco-no-pb ftco-room">
+        <div class="container-fluid px-0">
+            <div class="row no-gutters">
+                {% for room in rooms %}
+                <div class="col-lg-6">
+                    <div class="room-wrap d-md-flex ftco-animate">
+                        <a href="#" class="img" style="background-image: url('{{ room.image1.url }}');"></a>
+                        <div class="half left-arrow d-flex align-items-center">
+                            <div class="text p-4 text-center">
+                                <p class="mb-0"><span class="price mr-1">Hotel name: {{ room.name }}</span></p>
+                                <h3 class="mb-3"><a href="">District: {{ room.district }}</a></h3>
+                                <p class="pt-1"><a href="hotel-details" class="btn-custom px-3 py-2 rounded">View Details <span class="icon-long-arrow-right"></span></a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen">
+        <svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
+        </svg>
+    </div>
+
+    <!-- JS Scripts -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/aos.js' %}"></script>
+    <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+    <script src="{% static 'js/scrollax.min.js' %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&sensor=false"></script>
+    <script src="{% static 'js/google-map.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+  </body>
+</html>
